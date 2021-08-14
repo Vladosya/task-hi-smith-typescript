@@ -61,7 +61,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { JsonType } from '../../types'
+import { JsonType, EnclosureType } from '../../types'
 
 type NeedNewsIdType = {
   isOpenImages: boolean
@@ -78,7 +78,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    item(): JsonType {
+    item(): JsonType[] {
       return this.$store.getters.item
     },
   },
@@ -90,7 +90,7 @@ export default Vue.extend({
 
     if (this.$store.state.item.length > 0) {
       if (typeof this.item[0].enclosure === 'object') {
-        this.item[0].enclosure.forEach((i: any) => {
+        this.item[0].enclosure.forEach((i: EnclosureType) => {
           this.srcList.push(i.$.url)
         })
       }

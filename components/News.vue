@@ -95,7 +95,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    items(): JsonType {
+    items(): JsonType[] {
       return this.$store.getters.items
     },
   },

@@ -79,6 +79,6 @@ export const mutations: MutationTree<RootState> = {
 }
 
 export const getters: GetterTree<StateType, RootState> = {
-  items: (state): any[] => state.items,
-  item: (state): any[] => state.item,
+  items: (state): JsonType[] => state.items,
+  item: (state): JsonType[] => state.item,
 }
